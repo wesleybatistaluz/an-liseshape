@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministério da Saúde e Estética - DNAADG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rawline:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonte estilo "Wanted" para o cartaz -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rawline', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .gov-header {
+            background-color: #071d41;
+            color: white;
+        }
+        .gov-logo {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .main-header {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(7, 29, 65, 0.9), rgba(7, 29, 65, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-gov {
+            transition: transform 0.2s;
+            border-bottom: 4px solid #1351b4;
+        }
+        .card-gov:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #1351b4;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            color: #856404;
+        }
+        .punishment-box {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            color: #721c24;
+        }
+        .wanted-font {
+            font-family: 'Rye', serif;
+        }
+        .wanted-paper {
+            background-color: #fdfbf7;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5a3' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Estilo para simular papel timbrado nas leis */
+        .law-paper {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Brasil -->
+    <div class="bg-[#2c66ce] h-8 w-full flex items-center px-4 md:px-20 justify-between text-white text-xs font-bold uppercase">
+        <span>Brasil</span>
+        <div class="space-x-4">
+            <span class="cursor-pointer hover:underline">Acesso à informação</span>
+            <span class="cursor-pointer hover:underline">Participe</span>
+            <span class="cursor-pointer hover:underline">Legislação</span>
+            <span class="cursor-pointer hover:underline">Canais</span>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="main-header py-6 px-4 md:px-20 shadow-sm sticky top-0 z-50 bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Coat_of_arms_of_Brazil.svg/240px-Coat_of_arms_of_Brazil.svg.png" alt="Brasão" class="w-16 h-16">
+                <div>
+                    <h1 class="text-xs uppercase font-bold text-gray-500 tracking-wider">Presidência da República</h1>
+                    <h2 class="text-2xl font-bold text-[#1351b4] leading-tight">Ministério da Saúde e Estética</h2>
+                    <h3 class="text-sm font-semibold text-gray-700">DNAADG - Depto. Nacional de Análise Antropométrica</h3>
+                </div>
+            </div>
+            
+            <div class="flex gap-2">
+                <div class="relative">
+                    <input type="text" placeholder="Buscar no portal..." class="pl-4 pr-10 py-2 border rounded-full text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                </div>
+                <button class="bg-[#1351b4] text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-800 transition">ENTRAR COM GOV.BR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu de Navegação -->
+    <nav class="bg-[#071d41] text-white px-4 md:px-20 py-3 text-sm font-medium overflow-x-auto">
+        <ul class="flex gap-8 whitespace-nowrap">
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1">Início</li>
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1">Sobre o DNAADG</li>
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1">Membros do Conselho</li>
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1">Legislação do Shape</li>
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1">Punições & Multas</li>
+            <li class="hover:text-yellow-400 cursor-pointer border-b-2 border-transparent hover:border-yellow-400 pb-1 text-red-400 font-bold">Regularizar Situação</li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 px-4 md:px-20 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Fiscalização Rigorosa de Resultados</h1>
+        <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">Garantindo a qualidade nacional do Pump Pós-Treino através de inspeções visuais e táteis compulsórias.</p>
+        <div class="flex justify-center gap-4">
+            <a href="#regularizar" class="bg-yellow-500 text-blue-900 px-8 py-3 rounded font-bold hover:bg-yellow-400 transition transform hover:scale-105 shadow-lg">ENVIAR PROVAS AGORA</a>
+            <a href="#leis" class="bg-transparent border-2 border-white px-8 py-3 rounded font-bold hover:bg-white hover:text-blue-900 transition">CONSULTAR LEGISLAÇÃO</a>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-6xl mx-auto py-12 px-4 gap-8">
+        
+        <!-- Avisos de Destaque -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            <div class="card-gov bg-white p-6 rounded shadow">
+                <div class="text-[#1351b4] text-3xl mb-4"><i class="fas fa-camera"></i></div>
+                <h3 class="font-bold text-lg mb-2">Envio de Evidências</h3>
+                <p class="text-gray-600 text-sm mb-4">Saiba como enviar fotos e vídeos em 4K para a avaliação técnica do seu auditor.</p>
+                <a href="#" class="text-[#1351b4] font-bold text-sm hover:underline">Ler Normativa ></a>
+            </div>
+            <div class="card-gov bg-white p-6 rounded shadow">
+                <div class="text-[#1351b4] text-3xl mb-4"><i class="fas fa-hand-paper"></i></div>
+                <h3 class="font-bold text-lg mb-2">Inspeção Tátil</h3>
+                <p class="text-gray-600 text-sm mb-4">Entenda quando o Presidente pode solicitar a verificação manual da densidade glútea.</p>
+                <a href="#" class="text-[#1351b4] font-bold text-sm hover:underline">Agendar Inspeção ></a>
+            </div>
+            <div class="card-gov bg-white p-6 rounded shadow">
+                <div class="text-[#1351b4] text-3xl mb-4"><i class="fas fa-gavel"></i></div>
+                <h3 class="font-bold text-lg mb-2">Sanções Disciplinares</h3>
+                <p class="text-gray-600 text-sm mb-4">Conheça as penalidades físicas (palmadas e mordidas) para atletas inadimplentes.</p>
+                <a href="#" class="text-[#1351b4] font-bold text-sm hover:underline">Ver Tabela de Punições ></a>
+            </div>
+        </div>
+
+        <!-- Seção PROCURADA -->
+        <section class="mb-16 wanted-paper rounded border-4 border-red-800 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 bg-red-800 text-white px-6 py-2 font-bold uppercase tracking-widest transform -rotate-2 origin-top-left shadow-lg">Alerta Vermelho</div>
+            
+            <div class="p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+                <!-- Coluna da Foto (PROCURADA) -->
+                <div class="flex-shrink-0 relative group">
+                    <div class="border-8 border-gray-900 bg-white p-2 shadow-xl transform rotate-1">
+                        <!-- 
+                             INSTRUÇÃO DE USO: 
+                             Substitua o 'src' abaixo pelo nome do arquivo da foto dela (ex: "foto_dela.jpg") 
+                             se a foto estiver na mesma pasta, ou cole o link da imagem.
+                        -->
+                        <img id="wanted-img" src="julia.jpg" alt="Procurada" class="w-64 h-80 object-cover grayscale contrast-125">
+                        
+                        <div class="bg-black text-white text-center font-bold text-xl py-2 mt-1 uppercase">DEAD OR ALIVE</div>
+                    </div>
+                    <!-- Upload Button for Wanted (Mantido para interatividade) -->
+                    <label for="upload-wanted" class="absolute top-4 right-4 bg-red-600 text-white p-3 rounded-full cursor-pointer hover:bg-red-700 shadow-lg z-10" title="Inserir Foto da Infratora">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="upload-wanted" class="hidden" accept="image/*" onchange="carregarFotoProcurada(event)">
+                    
+                    <div class="absolute bottom-16 left-0 right-0 text-center transform -rotate-12 pointer-events-none">
+                        <span class="border-4 border-red-600 text-red-600 font-bold text-4xl px-4 py-1 uppercase opacity-80" style="font-family: 'Stencil', sans-serif;">FORAGIDA</span>
+                    </div>
+                </div>
+
+                <!-- Coluna do Texto -->
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-5xl md:text-6xl text-red-800 mb-2 wanted-font uppercase tracking-wide">Procurada</h2>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-6 bg-red-100 inline-block px-2">POR SONEGAÇÃO DE FOTOS</h3>
+
+                    <div class="space-y-4 text-gray-800">
+                        <p class="text-lg"><strong><i class="fas fa-exclamation-triangle text-red-600"></i> Descrição do Delito:</strong> A suspeita evadiu-se do local de treino sem submeter as evidências fotográficas do "pump" ao Presidente.</p>
+                        
+                        <div class="bg-white/50 p-4 border border-red-200 rounded-lg">
+                            <h4 class="font-bold text-red-800 uppercase mb-2 border-b border-red-200 pb-1">Perfil de Alta Periculosidade</h4>
+                            <ul class="list-none space-y-2 text-sm md:text-base">
+                                <li><i class="fas fa-skull-crossbones text-gray-800 w-6"></i> Dizem possuir um <strong>sorriso encantador</strong> capaz de desarmar autoridades.</li>
+                                <li><i class="fas fa-kiss-wink-heart text-gray-800 w-6"></i> Armada com <strong>beijos doces</strong> e viciantes.</li>
+                                <li><i class="fas fa-fire text-gray-800 w-6"></i> Proprietária de um <strong>corpo extremamente gostoso</strong> de destruição em massa.</li>
+                                <li><i class="fas fa-user-secret text-gray-800 w-6"></i> <strong>Histórico:</strong> Foi capaz de seduzir e manipular até mesmo o Presidente desta Assembleia.</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-xl font-bold text-red-900 mt-4"><i class="fas fa-heart-broken"></i> CRIME: ROUBOU MEU CORAÇÃO E FUGIU COM O SHAPE.</p>
+                    </div>
+
+                    <div class="mt-8 border-t-2 border-red-800 pt-4 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="block text-sm font-bold text-gray-500 uppercase">Recompensa por Captura</span>
+                            <span class="text-4xl font-extrabold text-green-700 font-mono">R$ 1.000.000,00</span>
+                        </div>
+                        <button onclick="document.getElementById('upload-wanted').click()" class="bg-red-800 text-white px-6 py-3 rounded font-bold hover:bg-red-900 transition shadow-lg uppercase tracking-wider">
+                            <i class="fas fa-camera mr-2"></i> Adicionar Foto da Ré
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-12">
+            
+            <!-- Coluna da Esquerda: Presidente e Membros -->
+            <div class="md:col-span-1">
+                <h2 class="text-2xl font-bold text-[#333] mb-6 section-title">Estrutura Organizacional</h2>
+                
+                <!-- Card do Presidente -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-[#071d41] p-4 text-center">
+                        <h3 class="text-white font-bold uppercase text-sm tracking-widest">Presidência do Conselho</h3>
+                    </div>
+                    <div class="p-6 text-center relative group">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <!-- 
+                                 INSTRUÇÃO DE USO: 
+                                 Substitua o 'src' abaixo pelo nome do arquivo da SUA foto (ex: "minha_foto.jpg") 
+                                 se a foto estiver na mesma pasta, ou cole o link da imagem.
+                            -->
+                            <img id="presida-img" src="1691777693600.jpg" alt="Presidente" class="w-32 h-32 rounded-full object-cover border-4 border-[#1351b4] shadow-md">
+                            
+                            <!-- Botão escondido para upload de foto -->
+                            <label for="upload-photo" class="absolute bottom-0 right-0 bg-yellow-500 text-white p-2 rounded-full cursor-pointer hover:bg-yellow-600 shadow-lg" title="Inserir Foto Real">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                            <input type="file" id="upload-photo" class="hidden" accept="image/*" onchange="carregarFoto(event)">
+                        </div>
+                        
+                        <h4 class="text-xl font-bold text-gray-800">Wesley Batista Luz</h4>
+                        <p class="text-[#1351b4] font-semibold text-sm mb-2">Auditor Chefe & Presidente Vitalício</p>
+                        <hr class="my-3 border-gray-200">
+                        <div class="text-left text-xs text-gray-500 space-y-2">
+                            <p><i class="fas fa-id-card mr-2"></i><strong>ID Funcional:</strong> 6969-HOT</p>
+                            <p><i class="fas fa-check-circle mr-2"></i><strong>Status:</strong> Ativo e Vigilante</p>
+                            <p><i class="fas fa-star mr-2"></i><strong>Especialidade:</strong> Avaliação de Glúteos</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 text-center py-2 border-t text-xs text-gray-500">
+                        Mandato: Eterno enquanto durar o amor
+                    </div>
+                </div>
+
+                <!-- Aviso Lateral -->
+                <div class="mt-8 warning-box p-4 rounded text-sm shadow-md">
+                    <strong><i class="fas fa-exclamation-triangle"></i> Atenção:</strong> O Presidente tem autonomia total para solicitar "provas de vida" (nudes) a qualquer momento do dia ou da noite, sob pena de bloqueio de carinho.
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Conteúdo e Leis -->
+            <div class="md:col-span-2 space-y-12" id="leis">
+                
+                <!-- Sobre -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#333] mb-4 section-title">Sobre o DNAADG</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        O <strong>Departamento Nacional de Análise Antropométrica e Desempenho Glúteo</strong> é uma autarquia federal fictícia de regime especial, vinculada diretamente ao coração do Noivo. Sua missão institucional é promover, fiscalizar e regular o crescimento muscular da Atleta (noiva), assegurando que todo o esforço na academia seja devidamente apreciado e elogiado.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Fundado sob os princípios da paixão e da atração física, o DNAADG atua implacavelmente contra a ocultação de beleza e o uso de roupas largas que escondem o shape.
+                    </p>
+                </section>
+
+                <!-- Legislação -->
+                <section>
+                    <h2 class="text-2xl font-bold text-[#333] mb-6 section-title">Legislação Vigente & Punições</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Lei 1 -->
+                        <div class="law-paper rounded-lg overflow-hidden">
+                            <div class="bg-gray-100 p-4 font-bold text-gray-800 flex justify-between items-center cursor-pointer border-b">
+                                <span><i class="fas fa-balance-scale mr-2 text-[#1351b4]"></i> Decreto-Lei nº 4.20/2024 - Lei da Transparência Corporal</span>
+                            </div>
+                            <div class="p-5 bg-white text-gray-700 text-sm">
+                                <p class="mb-3"><strong>Art. 1º</strong> Fica estritamente proibido ir à academia e não enviar foto no espelho demonstrando o "pump" (inchaço muscular).</p>
+                                <p class="mb-3"><strong>Art. 2º</strong> As imagens devem ser capturadas em ambiente iluminado, sendo vetado o uso de roupas largas que ocultem o contorno da obra de arte (o corpo).</p>
+                                <p><strong>Parágrafo Único:</strong> A foto deve conter, obrigatoriamente, um ângulo de perfil que valorize a projeção glútea e uma de costas para análise de simetria.</p>
+                            </div>
+                        </div>
+
+                        <!-- Lei 2 -->
+                        <div class="law-paper rounded-lg overflow-hidden">
+                            <div class="bg-blue-50 p-4 font-bold text-blue-900 flex justify-between items-center cursor-pointer border-b border-blue-200">
+                                <span><i class="fas fa-ruler-combined mr-2"></i> Resolução Normativa nº 171 - Do Protocolo de Vestimenta</span>
+                            </div>
+                            <div class="p-5 bg-white text-gray-700 text-sm">
+                                <p class="mb-3"><strong>Art. 1º</strong> Em dias de treino de membros inferiores ("Leg Day"), recomenda-se o uso de shorts de compressão que evidenciem o trabalho muscular.</p>
+                                <p class="mb-3"><strong>Art. 2º</strong> Fica facultado ao Presidente solicitar, a qualquer momento, a remoção parcial da vestimenta para conferência de marcas de bronzeado ou definição muscular.</p>
+                                <p class="text-blue-800 font-semibold mt-2"><i class="fas fa-info-circle"></i> Nota Técnica: O descumprimento pode gerar a instauração de Inquérito de Gostosura.</p>
+                            </div>
+                        </div>
+
+                        <!-- Lei 3 (Punições) -->
+                        <div class="law-paper rounded-lg overflow-hidden border-red-200 shadow-md">
+                            <div class="bg-red-50 p-4 font-bold text-red-800 flex justify-between items-center cursor-pointer border-b border-red-200">
+                                <span><i class="fas fa-hand-sparkles mr-2"></i> Medida Provisória nº 69 - Das Sanções Físicas e Táteis</span>
+                            </div>
+                            <div class="p-5 bg-white text-gray-700 text-sm">
+                                <p class="mb-3"><strong>Art. 5º - Da Inadimplência:</strong> O não envio das evidências no prazo de 10 minutos pós-treino sujeitará a infratora às seguintes penalidades cumulativas:</p>
+                                <ul class="list-none space-y-3 mt-3">
+                                    <li class="flex items-start"><i class="fas fa-hand-paper text-red-500 mt-1 mr-2"></i> <span><strong>Palmadas Corretivas:</strong> Aplicação de 10 (dez) palmadas na região glútea, com intensidade moderada a forte, visando o aumento da circulação sanguínea local.</span></li>
+                                    <li class="flex items-start"><i class="fas fa-kiss-beam text-red-500 mt-1 mr-2"></i> <span><strong>Beijos Compulsórios:</strong> Sessão ininterrupta de beijos no pescoço até causar arrepios visíveis.</span></li>
+                                    <li class="flex items-start"><i class="fas fa-search-plus text-red-500 mt-1 mr-2"></i> <span><strong>Inspeção Tátil Profunda:</strong> O Presidente reserva-se o direito de realizar "apertões de verificação" para testar a consistência tecidual (dureza) do músculo.</span></li>
+                                    <li class="flex items-start"><i class="fas fa-ban text-red-500 mt-1 mr-2"></i> <span><strong>Bloqueio de Regalias:</strong> Suspensão temporária do direito de escolher a série na Netflix.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Consulta Interativa -->
+                <section id="regularizar" class="bg-[#eef2f8] p-8 rounded-lg border border-blue-100 shadow-inner">
+                    <h2 class="text-xl font-bold text-[#1351b4] mb-4 text-center">Consultar Situação da Atleta</h2>
+                    <p class="text-center text-gray-600 mb-6 text-sm">Digite o CPF ou Nome para verificar se há pendências de envio de fotos.</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto">
+                        <input type="text" placeholder="CPF ou Nome..." class="p-3 border rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm">
+                        <button onclick="consultarSituacao()" class="bg-green-600 text-white font-bold py-3 px-6 rounded hover:bg-green-700 transition shadow-md">CONSULTAR</button>
+                    </div>
+
+                    <!-- Resultado (Oculto inicialmente) -->
+                    <div id="resultado-consulta" class="hidden mt-6 bg-white p-6 rounded shadow border-l-4 border-red-600 animate-pulse">
+                        <div class="flex items-center gap-4 text-red-600 mb-2">
+                            <i class="fas fa-times-circle text-3xl"></i>
+                            <h3 class="text-xl font-bold uppercase">Situação Irregular</h3>
+                        </div>
+                        <p class="text-gray-800 font-medium">Consta pendência grave de envio de fotos do último treino de glúteos.</p>
+                        <p class="text-sm text-gray-500 mt-2"><strong>Ação Recomendada:</strong> Dirija-se imediatamente a um espelho e envie a foto para o WhatsApp do Presidente.</p>
+                        <p class="text-xs text-red-500 mt-2 font-bold">MULTA DE PALMADAS ATIVADA.</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#071d41] text-white py-12 border-t-4 border-yellow-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Coat_of_arms_of_Brazil.svg/240px-Coat_of_arms_of_Brazil.svg.png" alt="Brasão" class="w-20 opacity-80">
+                <div class="text-sm">
+                    <p class="font-bold">Ministério da Saúde e Estética</p>
+                    <p>Departamento Nacional de Análise Antropométrica (DNAADG)</p>
+                    <p class="text-gray-400 mt-1">Desenvolvido com amor e safadeza.</p>
+                </div>
+            </div>
+            <div class="text-right text-xs text-gray-400">
+                <p>Este é um site fictício para fins de entretenimento do casal.</p>
+                <p>Todos os direitos reservados ao Noivo. © 2024</p>
+                <div class="mt-2 space-x-2 text-xl">
+                    <i class="fab fa-instagram hover:text-white cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-white cursor-pointer"></i>
+                    <i class="fab fa-youtube hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function consultarSituacao() {
+            const resultado = document.getElementById('resultado-consulta');
+            resultado.classList.remove('hidden');
+            // Scroll suave até o resultado
+            resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function carregarFoto(event) {
+            const imgElement = document.getElementById('presida-img');
+            const file = event.target.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imgElement.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function carregarFotoProcurada(event) {
+            const imgElement = document.getElementById('wanted-img');
+            const file = event.target.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imgElement.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
